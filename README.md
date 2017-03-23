@@ -3,7 +3,7 @@ Edited and Improved by Mehrpouya
 
 ## Install
 ```bash
-git clone https://github.com/TABCHI/1.0.git && cd TABCHI && chmod 777 install.sh && chmod 777 game.sh && ./install.sh && lua creator.lua
+git clone https://github.com/TABCHI/tabchi.git && cd tabchi && chmod 777 install.sh && chmod 777 telegamer.sh && ./install.sh && lua creator.lua
 ```
 ## Create a bot!
 ```
@@ -23,13 +23,11 @@ Use `./tabchi-ID.sh` to run your bot normaly or use `screen ./tabchi-ID.sh` for 
 
 ## Autolaunch
 enter informations in game.sh  
-use `./game.sh -l` for Autolaunch
-## Anticrash
-enter informations in game.sh  
-use `./game.sh -a` for anticrash
+use `./game.sh ` for Autolaunch
 
 ## Developers
 
  * [Mehrpouya](https://telegram.me/Mehrpouya)
+ * [Aryan](https://telegram.me/AryawN_Si)
 
 ### Powered by [TeleGamer](https://telegram.me/TeleGamerCh)
