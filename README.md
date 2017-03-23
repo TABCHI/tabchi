@@ -22,8 +22,7 @@ Enter your telegram id in "Full Sudo ID" part
 Use `./tabchi-ID.sh` to run your bot normaly or use `screen ./tabchi-ID.sh` for auto launch mode (put tabchi-id in ID part)
 
 ## Autolaunch
-enter informations in game.sh  
-use `./game.sh ` for Autolaunch
+use `./telegamer.sh ` for Autolaunch
 
 ## Developers
 
