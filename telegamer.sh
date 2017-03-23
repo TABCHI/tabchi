@@ -10,6 +10,7 @@ while true ; do
     rm -rf ~/.telegram-cli/$entry/data/sticker/*
     rm -rf ~/.telegram-cli/$entry/data/temp/*
     rm -rf ~/.telegram-cli/$entry/data/video/*
+    rm -rf ~/.telegram-cli/$entry/data/thumb/*
     rm -rf ~/.telegram-cli/$entry/data/voice/*
     rm -rf ~/.telegram-cli/$entry/data/profile_photo/*
     tmux new-session -d -s $entry "./$entr"
