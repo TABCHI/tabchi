@@ -28,5 +28,7 @@ use `./telegamer.sh ` for Autolaunch
 
  * [Mehrpouya](https://telegram.me/Mehrpouya)
  * [Aryan](https://telegram.me/AryawN_Si)
+ * [MrBlacklife](https://telegram.me/Mrblacklife)
 
 ### Powered by [TeleGamer](https://telegram.me/TeleGamerCh)
+### Thanks to [BlackLife™](https://t.me/BlackLifeTM)
