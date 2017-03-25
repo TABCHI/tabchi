@@ -66,6 +66,8 @@ Bia pv]]).."",1,"md")end end end end;function check_link(s,t,y)if t.is_group_ or
 *روشن یا خاموش کردن تبلیغات در ربات برای سودو ها غیر از فول سودو*
 `/typing (on|off)`
 *روشن یا خاموش کردن تایپ کردن ربات*
+`/sharecontact (on|off)`
+*روشن یا خاموش کردن شیر کردن شماره موقع اد کردن شماره ها*
 `/settings (on|off)`
 *روشن یا خاموش کردن کل تنظیمات*
 `/settings`
