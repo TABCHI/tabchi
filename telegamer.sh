@@ -1,5 +1,6 @@
 #!/bin/bash
 SCREENNUM=`ps -e | grep -c screen`
+count=1
 TMUXNUM=`ps -e | grep -c tmux`
 Reloadtime=500
 clear
@@ -10,10 +11,22 @@ for j in f b; do
   done
 done
 rst=$'\e[0m'
+bld=$'\e[1m'
 echo -e "\e[100m                                   Launcher Script                             \e[00;37;40m"
 echo -e "\e[01;34m                                    By Mehrpouya                               \e[00;37;40m"
 echo ""
-echo
+sleep 0.5
+cat << EOF
+ $f1██████████ ██████████ ██████████    ███████   ██████████$rst
+ $f1    ██     ██      ██ ██       █  ██       ██     ██$rst
+ $f1    ██     ██      ██ ██       █  ██              ██$rst
+ $f1    ██     ██      ██ ██████████  ██              ██$rst
+ $f1    ██     ██████████ ██       █  ██              ██$rst
+ $f1    ██     ██      ██ ██       █  ██       ██     ██$rst
+ $f1    ██     ██      ██ ██████████    ███████   ██████████$rst
+EOF
+sleep 2
+
 cat << EOF
  $f1  ▀▄   ▄▀     $f2 ▄▄▄████▄▄▄    $f3  ▄██▄     $f4  ▀▄   ▄▀     $f5 ▄▄▄████▄▄▄    $f6  ▄██▄  $rst
  $f1 ▄█▀███▀█▄    $f2███▀▀██▀▀███   $f3▄█▀██▀█▄   $f4 ▄█▀███▀█▄    $f5███▀▀██▀▀███   $f6▄█▀██▀█▄$rst
@@ -21,15 +34,33 @@ cat << EOF
  $f1▀ ▀▄▄ ▄▄▀ ▀   $f2 ▀█▄ ▀▀ ▄█▀    $f3▀▄    ▄▀   $f4▀ ▀▄▄ ▄▄▀ ▀   $f5 ▀█▄ ▀▀ ▄█▀    $f6▀▄    ▄▀$rst
 EOF
 sleep 1.5
-    echo -e "\e[01;34m Script Reload in $Reloadtime Seconds\e[00;37;40m"
-    echo -e "\e[01;34m number of screens running : $SCREENNUM\e[00;37;40m"
-    echo -e "\e[01;34m number of tmux running : $TMUXNUM\e[00;37;40m"
+    echo -e "\e[01;34m Script Reload In Every $Reloadtime Seconds\e[00;37;40m"
+    echo -e "\e[01;34m Number Of Screens Running : $SCREENNUM\e[00;37;40m"
+    echo -e "\e[01;34m Number Of Tmux Running : $TMUXNUM\e[00;37;40m"
+sleep 3.5
 cat << EOF
  $bld$f1▄ ▀▄   ▄▀ ▄   $f2 ▄▄▄████▄▄▄    $f3  ▄██▄     $f4▄ ▀▄   ▄▀ ▄   $f5 ▄▄▄████▄▄▄    $f6  ▄██▄  $rst
  $bld$f1█▄█▀███▀█▄█   $f2███▀▀██▀▀███   $f3▄█▀██▀█▄   $f4█▄█▀███▀█▄█   $f5███▀▀██▀▀███   $f6▄█▀██▀█▄$rst
  $bld$f1▀█████████▀   $f2▀▀▀██▀▀██▀▀▀   $f3▀▀█▀▀█▀▀   $f4▀█████████▀   $f5▀▀▀██▀▀██▀▀▀   $f6▀▀█▀▀█▀▀$rst
  $bld$f1 ▄▀     ▀▄    $f2▄▄▀▀ ▀▀ ▀▀▄▄   $f3▄▀▄▀▀▄▀▄   $f4 ▄▀     ▀▄    $f5▄▄▀▀ ▀▀ ▀▀▄▄   $f6▄▀▄▀▀▄▀▄$rst
 EOF
+echo "Try To Checking Tabchi Folder"
+ls ../ | grep tabchi 2>/dev/null >/dev/null
+if [ $? != 0 ]; then
+  echo -e "$f1 ERROR: Tabchi: Tabchi Folder NOT FOUND IN YOUR HOME DIRECTORY$rst"
+  echo -e "$f1 ERROR: Try To Change Tabchi Folder Name To tabchi$rst"
+  sleep 4
+  exit 1
+fi
+echo -e "$f2 Tabchi Folder FOUND IN YOUR HOME DIRECTORY$rst"
+ls ./ | grep tabchi.license 2>/dev/null >/dev/null
+if [ $? != 0 ]; then
+  echo -e "$f1 ERROR: Tabchi: This Auto Launcher Can Be Used Just For Our Source$rst"
+  echo -e "$bld$f2 Github : https://github.com/tabchi/tabchi $rst"
+  sleep 4
+  exit 1
+fi
+sleep 1.5
 while true ; do
   for entr in tabchi-*.sh ; do
     entry="${entr/.sh/}"
@@ -37,7 +68,18 @@ while true ; do
     tmux new-session -d -s $entry "./$entr"
     tmux detach -s $entry
   done
-  echo Bots Running!
-  
+  echo -e ""
+  echo -e "$bld$f2 Bot Source : Tabchi $rst"
+  sleep 0.5
+  echo -e "$bld$f2 Github : https://github.com/tabchi/tabchi $rst"
+  sleep 0.5
+  echo -e "$bld$f2 Telegran CH : T.ME/TABADOL_CHI $rst"
+  sleep 0.5
+  echo -e "$bld$f2 Times Deleted : $count $rst"
   sleep $Reloadtime
+   let count=count+1
+	if [ "$count" == 2400 ]; then
+		sync
+		sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'
+	fi
 done
