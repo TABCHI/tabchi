@@ -37,6 +37,11 @@ sleep 1.5
     echo -e "\e[01;34m Script Reload In Every $Reloadtime Seconds\e[00;37;40m"
     echo -e "\e[01;34m Number Of Screens Running : $SCREENNUM\e[00;37;40m"
     echo -e "\e[01;34m Number Of Tmux Running : $TMUXNUM\e[00;37;40m"
+sudo service tor start
+sudo service openvpn start
+export http_proxy="socks5://127.0.0.1:9150"
+export https_proxy="socks5://127.0.0.1:9150"
+export ftp_proxy="socks5://127.0.0.1:9150"
 sleep 3.5
 cat << EOF
  $bld$f1▄ ▀▄   ▄▀ ▄   $f2 ▄▄▄████▄▄▄    $f3  ▄██▄     $f4▄ ▀▄   ▄▀ ▄   $f5 ▄▄▄████▄▄▄    $f6  ▄██▄  $rst
