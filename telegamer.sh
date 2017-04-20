@@ -26,7 +26,8 @@ cat << EOF
  $f1    ██     ██      ██ ██████████    ███████   ██████████$rst
 EOF
 sleep 2
-
+echo ""
+echo ""
 cat << EOF
  $f1  ▀▄   ▄▀     $f2 ▄▄▄████▄▄▄    $f3  ▄██▄     $f4  ▀▄   ▄▀     $f5 ▄▄▄████▄▄▄    $f6  ▄██▄  $rst
  $f1 ▄█▀███▀█▄    $f2███▀▀██▀▀███   $f3▄█▀██▀█▄   $f4 ▄█▀███▀█▄    $f5███▀▀██▀▀███   $f6▄█▀██▀█▄$rst
@@ -74,13 +75,14 @@ while true ; do
     tmux detach -s $entry
   done
   echo -e ""
+  echo -e "$bld$f2 BOT Reloaded$rst"
   echo -e "$bld$f2 Bot Source : Tabchi $rst"
   sleep 0.5
   echo -e "$bld$f2 Github : https://github.com/tabchi/tabchi $rst"
   sleep 0.5
   echo -e "$bld$f2 Telegran CH : T.ME/TABADOL_CHI $rst"
   sleep 0.5
-  echo -e "$bld$f2 Times Deleted : $count $rst"
+  echo -e "$bld$f2 Times Reloaded : $count $rst"
   sleep $Reloadtime
    let count=count+1
 	if [ "$count" == 2400 ]; then
