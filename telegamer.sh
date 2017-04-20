@@ -42,7 +42,6 @@ sudo service tor start
 sudo service openvpn start
 export http_proxy="socks5://127.0.0.1:9150"
 export https_proxy="socks5://127.0.0.1:9150"
-export ftp_proxy="socks5://127.0.0.1:9150"
 sleep 3.5
 cat << EOF
  $bld$f1▄ ▀▄   ▄▀ ▄   $f2 ▄▄▄████▄▄▄    $f3  ▄██▄     $f4▄ ▀▄   ▄▀ ▄   $f5 ▄▄▄████▄▄▄    $f6  ▄██▄  $rst
